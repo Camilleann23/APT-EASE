@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- Custom Fake Status Bar -->
+    <RelativeLayout
+        android:id="@+id/customStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#000000"
+        android:padding="5dp">
+
+        <!-- Time (Fake Display) -->
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9:27"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp" />
+
+        <!-- Right-aligned Status Icons -->
+        <LinearLayout
+            android:id="@+id/statusIcons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Signal Icon -->
+            <ImageView
+                android:id="@+id/signalIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_signal"
+                android:layout_marginEnd="8dp" />
+
+            <!-- WiFi Icon -->
+            <ImageView
+                android:id="@+id/wifiIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_wifi"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Battery Icon (Properly Aligned) -->
+            <ImageView
+                android:id="@+id/batteryIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_battery"
+                android:layout_marginEnd="16dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Background Image with Overlay -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/building_image"
+        android:alpha="0.7"
+        android:layout_below="@id/customStatusBar" />
+
+    <!-- Centered Text -->
+    <TextView
+        android:id="@+id/centerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make your space\neven better."
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_centerInParent="true" />
+
+    <!-- Arrow Button -->
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_arrow"
+        android:scaleType="fitCenter"
+        android:layout_below="@id/centerText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>

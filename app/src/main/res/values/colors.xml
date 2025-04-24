@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <!-- Primary Colors -->
+        <color name="primary">#3F51B5</color> <!-- Default Blue -->
+        <color name="accent">#FF4081</color> <!-- Pink Accent -->
+
+        <!-- Backgrounds -->
+        <color name="background">#F5F5F5</color> <!-- Light Grayish Background -->
+        <color name="card_background">#FFFFFF</color> <!-- White Cards -->
+
+        <!-- Text & Elements -->
+        <color name="black">#000000</color> <!-- Pure Black -->
+        <color name="white">#FFFFFF</color> <!-- Pure White -->
+        <color name="gray">#757575</color> <!-- Standard Gray -->
+        <color name="light_gray">#E0E0E0</color> <!-- Lighter Gray for Dividers or Borders -->
+
+</resources>
