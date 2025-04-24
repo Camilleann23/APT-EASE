@@ -1,211 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40dp"
     android:background="@android:color/white">
 
-    <!-- Custom Status Bar -->
-    <RelativeLayout
-        android:id="@+id/customStatusBar"
+    <!-- Top Bar -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#000000"
-        android:padding="5dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
 
         <TextView
-            android:id="@+id/timeText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="9:27"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="16dp" />
+            android:text="Discover"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:id="@+id/statusIcons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_dialog_info"
+            android:layout_marginEnd="8dp" />
 
-            <ImageView
-                android:id="@+id/signalIcon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_signal"
-                android:layout_marginEnd="8dp" />
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/profile_icon"
+            android:scaleType="centerCrop"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/wifiIcon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_wifi"
-                android:layout_marginEnd="8dp" />
-
-            <ImageView
-                android:id="@+id/batteryIcon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_battery"
-                android:layout_marginEnd="16dp" />
-        </LinearLayout>
-    </RelativeLayout>
-
-    <!-- Settings Title -->
+    <!-- Section Title -->
     <TextView
-        android:id="@+id/settingsTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Discover"
-        android:layout_marginEnd="23dp"
-        android:textSize="22sp"
-        android:layout_marginLeft="2dp"
-        android:textColor="@android:color/black"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp" />
+        android:text="WHAT'S NEW TODAY"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp" />
 
-    <!-- Settings Options -->
-    <ScrollView
+    <!-- Fake Card using LinearLayout with rounded corners -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/bottomNav"
-        android:layout_below="@id/settingsTitle">
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background=""
+        android:elevation="6dp"
+        android:clipToOutline="true">
 
+        <!-- Image -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/property_img" />
+
+        <!-- Overlay -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="#80000000"
+            android:gravity="center_vertical">
 
-            <!-- Account Settings -->
-            <LinearLayout
-                android:id="@+id/accountSettings"
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_myplaces"
+               />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="12dp"
-                    android:src="@drawable/ic_account" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Payment Status"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/black" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginVertical="8dp" />
-
-            <!-- Notification Settings -->
-            <LinearLayout
-                android:id="@+id/notificationSettings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/house"
-                    android:layout_marginEnd="12dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Property Overview"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/black" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginVertical="8dp" />
-
-            <!-- Privacy Settings -->
-            <LinearLayout
-                android:id="@+id/privacySettings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_privacy"
-                    android:layout_marginEnd="12dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Privacy"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/black" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginVertical="8dp" />
-
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginVertical="8dp" />
-
-            <!-- Logout -->
-            <LinearLayout
-                android:id="@+id/logout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="12dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true">
-
-
-            </LinearLayout>
-
+                android:layout_marginStart="8dp"
+                android:text="Properties Overview"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
         </LinearLayout>
-    </ScrollView>
 
-    <!-- Bottom Navigation Bar -->
+    </LinearLayout>
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background=""
+        android:elevation="6dp"
+        android:paddingTop="50dp"
+        android:clipToOutline="true">
+
+        <!-- Image -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:paddingTop=""
+            android:layout_weight="2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/payment" />
+
+        <!-- Overlay -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:paddingBottom=""
+            android:background="#80000000"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_myplaces"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Occupancy and Rates"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Image -->
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:background="#EEEEEE"
         android:padding="10dp"
         android:paddingBottom="10dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:weightSum="4">
 
         <Button
@@ -241,4 +182,14 @@
             android:background="?android:attr/selectableItemBackground" />
     </LinearLayout>
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/imgMain"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/payment" />
+
+
+</LinearLayout>
+

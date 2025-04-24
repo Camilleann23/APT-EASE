@@ -200,22 +200,61 @@
             android:background="@drawable/black_button"
             android:layout_marginTop="20dp"/>
 
-        <!-- Social Media Login -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="20dp">
-
-            <ImageView
-                android:id="@+id/facebookLogin"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_facebook" />
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tenant_radio_button"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tenant"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="a person who occupies land or property rented from a landlord."
+                android:textSize="14sp"
+                android:textColor="#808080"
+                android:paddingLeft="8dp"/>
         </LinearLayout>
 
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop=""
+            android:gravity="center_vertical">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/landlord_radio_button"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Landlord"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingLeft="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="a person who rents land, a building, or an apartment to a tenant."
+                android:textSize="14sp"
+                android:textColor="#808080"
+                android:paddingLeft="8dp" />
+        </LinearLayout>
     </LinearLayout>
+
 
 </RelativeLayout>

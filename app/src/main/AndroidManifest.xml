@@ -13,6 +13,30 @@
         android:theme="@style/Theme.AptEaseApplication"
         tools:targetApi="35">
         <activity
+            android:name=".Notification_Tenant"
+            android:exported="false" />
+        <activity
+            android:name=".MessageScreen"
+            android:exported="false" />
+        <activity
+            android:name=".RentPaymentStatus"
+            android:exported="false" />
+        <activity
+            android:name=".MaintenanceRequest"
+            android:exported="false" />
+        <activity
+            android:name=".OccupancyRates"
+            android:exported="false" />
+        <activity
+            android:name=".PropertiesOverview"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationLandlord"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardTenant"
+            android:exported="false" />
+        <activity
             android:name=".SignUpPage"
             android:exported="false" />
         <activity
